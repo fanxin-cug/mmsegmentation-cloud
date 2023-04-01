@@ -1,3 +1,51 @@
+# RSI segmentation using OpenMMLab Semantic Segmentation Toolbox
+
+This is an implementaion for Remote Sensing Image (RSI) segmentation using OpenMMLab Semantic Segmentation Toolbox and Benchmark.
+
+MMSegmentation is an open source semantic segmentation library based on PyTorch.
+It is a part of the [OpenMMLab](https://openmmlab.com/) project.
+
+## Introduction
+
+We developed a dataset for quality tagging the Chinese Gaofen-1/6 (GF-1/6) satellite WFV images. It aims to achieve the requirements of the "Analysis Ready Data (ARD) Technology Research for Domestic Satellites" project and resolve the lack of Chinese satellite quality tagging data products. Finally, we give a complete GF-1/6 satellite quality tagging algorithm flow using Swin Transformer. And the data product specification is also provided.
+
+The RGB sample images of Landsat-8, Sentinel-2, and GF-1/6 produced using our fixed mapping transformation have high similarity in spectral features and are difficult to distinguish visually. Based on this similarity of sample images, a model trained on Landsat-8/Sentinel-2 data can be transferred to produce the GF-1/6 quality tagging standard data products directly.
+
+Our customized dataset produced high-precision quality tagging labels by Landsat-8/Sentinel-2 TOA data using the new version of Fmask, combined with a small number of manual selecting and quality corrections (Manual refinement).
+
+![dataset image](resources/example.png)
+
+The sample label is a single-band PNG format image with a pixel size of 512×512, the same as sample image. The label contains six categories: land, water, cloud shadow, snow, cloud, and fill value.
+
+![dataset image](resources/table.png)
+
+## Our customized dataset
+
+Below are some typical images in our customized dataset. And two subsets of the dataset can be downloaded now from the following links.
+
+### 2k Sample
+
+https://drive.google.com/file/d/1Fj_b79ZK8KueRo2c0vA33gKHjrTMHnH9/view?usp=share_link
+
+### 5k Sample
+
+https://drive.google.com/file/d/1eGhQdbEML570jL9q2Ob057N8HVCYSw6F/view?usp=share_link
+
+### Example images
+
+(1) Cloud and cloud shadow
+
+![dataset image](resources/rs_dataset1.png)
+![dataset image](resources/rs_dataset2.png)
+![dataset image](resources/rs_dataset3.png)
+
+(2) Snow
+
+![dataset image](resources/rs_dataset4.png)
+![dataset image](resources/rs_dataset5.png)
+
+# mmsegmentation README
+
 <div align="center">
   <img src="resources/mmseg-logo.png" width="600"/>
   <div>&nbsp;</div>
